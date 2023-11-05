@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Practice 2</title>
+	<h1>EECS 348 Lab Seven Practice Two</h1>
+  <style>
+    #rectangle {
+      width: 200px;
+      height: 100px;
+      border: 2px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="rectangle">
+    <span id="text">Some dummy text</span>
+  </div>
+  <div>
+    Border Color: <input type="color" id="borderColor">
+    Background Color: <input type="color" id="bgColor">
+    Border Width: <input type="number" id="borderWidth" min="0">
+  </div>
+
+  <script>
+    const rectangle = document.getElementById("rectangle");
+    const text = document.getElementById("text");
+    const borderColor = document.getElementById("borderColor");
+    const bgColor = document.getElementById("bgColor");
+    const borderWidth = document.getElementById("borderWidth");
+
+    borderColor.addEventListener("input", function () {
+      rectangle.style.borderColor = borderColor.value;
+    });
+
+    bgColor.addEventListener("input", function () {
+      rectangle.style.backgroundColor = bgColor.value;
+    });
+    borderWidth.addEventListener("input", function () {
+      rectangle.style.borderWidth = borderWidth.value + "px";
+    });
+
+  </script>
+</body>
+</html>

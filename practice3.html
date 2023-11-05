@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Practice 3</title>
+</head>
+<body>
+  <h1>EECS 348 Lab Seven Practice Three</h1>
+  <form id="passwordForm">
+    <label for="password">First Password:</label>
+    <input type="text" id="password" required>
+    <br>
+    <label for="secondPassword">Second Password:</label>
+    <input type="text" id="secondPassword" required>
+    <br>
+    <span id="message" style="color: red;"></span>
+    <br>
+    <input type="submit" value="Validate Your Password">
+  </form>
+
+  <script>
+    document.getElementById("passwordForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const secondPassword = document.getElementById("secondPassword").value;
+      const message = document.getElementById("message");
+
+    if (password.length < 8) {
+        message.textContent = "The length of the first password is less than 8 letters!"
+    }else {
+     if (password === secondPassword) {
+        message.textContent = "Everything is good!";
+    } else {
+        message.textContent = "Two passwords don't match.";
+      }
+    }
+    });
+  </script>
+</body>
+</html>
